@@ -33,8 +33,26 @@ class Auth implements BaseAuth {
       
     }
 
-    Future<void> signOut() async{
-      await _firebaseAuth.signOut();
+     signOut() {
+      FirebaseAuth.instance.signOut();
     }
+
+    signIn(email,password) {
+    FirebaseAuth.instance.signInWithEmailAndPassword(email: email, password: password).then((user){
+       
+    
+    }).catchError((e){
+      print(e);
+    });
+    
+  }
+  createuser(email,password) {
+    FirebaseAuth.instance.createUserWithEmailAndPassword(email: email, password: password).then((user){
+       print('User Created');
+    }).catchError((e){
+      print(e);
+    });
+    
+  }
   }
 

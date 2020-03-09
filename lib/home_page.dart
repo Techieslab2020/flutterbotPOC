@@ -8,9 +8,9 @@ class HomePage extends StatelessWidget {
   HomePage({this.auth, this.onSignedOut});
   final BaseAuth auth;
   final VoidCallback onSignedOut;
-  void _signedOut() async {
+  void _signedOut()  {
     try {
-      await auth.signOut();
+      Auth().signOut();
       onSignedOut();
     } catch (e) {
       print(e);
@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
         actions: <Widget>[
           new FlatButton( child: new Text('SignOut',style: new TextStyle(fontSize:17.0,color:Colors.white ),
           ),
-          onPressed: _signedOut,)
+          onPressed:_signedOut,)
         ],
       ),
       body: Container(

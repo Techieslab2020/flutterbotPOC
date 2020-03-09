@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import '../root_page.dart';
 
 class Message extends StatelessWidget {
-  Message({this.text, this.name, this.type});
+  Message({this.text, this.name, this.type , this.buttontext});
 
   final String text;
   final String name;
   final bool type;
+  final String buttontext;
   
 
   List<Widget> botMessage(context) {
@@ -26,9 +28,11 @@ class Message extends StatelessWidget {
               child: Text(text),
               
             ),
+            
             ],
         ),
       ),
+      
     ];
   }
 

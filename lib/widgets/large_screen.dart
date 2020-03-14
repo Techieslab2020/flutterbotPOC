@@ -11,7 +11,9 @@ class LargeScreen extends StatelessWidget {
         child: Stack(
         fit: StackFit.expand,
         children: <Widget>[addBackground(), addWelcomeText(context)],
+      
       ),
+      
     );
   }
 
@@ -64,14 +66,18 @@ class LargeScreen extends StatelessWidget {
                 
               ],
             ),
+            
           ),
+          
         ),
         Padding(
           padding: EdgeInsets.all(8.0),
-          child: chatbutton(context),
+        //  child: chatbutton(context),
         ),
-        
+      
       ],
+
     );
+    
   }
 }

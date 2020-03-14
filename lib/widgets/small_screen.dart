@@ -60,7 +60,7 @@ class SmallScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.all(8.0),
-            child: chatbutton(context),
+           // child: chatbutton(context),
           ),
         ],
       ),

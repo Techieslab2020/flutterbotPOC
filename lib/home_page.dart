@@ -3,6 +3,8 @@ import 'package:myapp/auth.dart';
 import 'auth.dart';
 import 'utils/myColors.dart';
 import 'widgets/body.dart';
+import './buttonfloatingdialog.dart';
+import './widgets/dialog_flow.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({this.auth, this.onSignedOut});
@@ -16,12 +18,13 @@ class HomePage extends StatelessWidget {
       print(e);
     }
   }
-
+  
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
         title: new Text('Welcome'),
+        automaticallyImplyLeading: false,
         actions: <Widget>[
           new FlatButton( child: new Text('SignOut',style: new TextStyle(fontSize:17.0,color:Colors.white ),
           ),
@@ -30,7 +33,8 @@ class HomePage extends StatelessWidget {
       ),
       body: Container(
       decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [MyColors.white1, MyColors.white2])),
+        gradient: LinearGradient(colors: [MyColors.white1, MyColors.white2])
+        ),
       child: Scaffold(
         backgroundColor: Colors.transparent,
         body: SingleChildScrollView(
@@ -40,6 +44,23 @@ class HomePage extends StatelessWidget {
         ),
       ),
     ),
+    floatingActionButton:  new ButtonFloatingDialog(
+        child: new Column(children: <Widget>[
+          new Container(
+            height: 30.0,
+            color: Colors.blue,
+           
+            child: Center(
+              
+              child: new Text("Shopper Assistance",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0,color:Colors.white),),
+            ),
+          ),
+          new FlutterDialogFlow(),
+          new Divider(height: 1.0),
+         
+        ]),
+      ),
     );
   }
 

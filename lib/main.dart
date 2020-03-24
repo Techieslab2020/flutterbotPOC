@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'getting_started_screen.dart';
-
-
-
+import 'package:myapp/home_page.dart';
 
 void main() =>  runApp(new MyApp());
-
 
 class MyApp extends StatelessWidget {
   
@@ -17,7 +13,7 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home:GettingStartedScreen()
+        home:HomePage()
     );
   }
 }

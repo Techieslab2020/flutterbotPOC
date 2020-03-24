@@ -9,7 +9,7 @@ class ResponsiveWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return smallScreen;
+   // return smallScreen;
     final shortestSide = MediaQuery.of(context).size.shortestSide;
     //Returns the largest screen for screens 1200 or larger.
     if (shortestSide >= 1200) {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../utils/strings.dart';
 import '../utils/myColors.dart';
-import '../utils/widgets_lib.dart';
+
 
 class LargeScreen extends StatelessWidget {
   @override

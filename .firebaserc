@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "shoppingchatbot-a746a"
+    "default": "shoppingchatbot-a746a",
+    "build/web": "shoppingassistant-henyjn"
   }
 }

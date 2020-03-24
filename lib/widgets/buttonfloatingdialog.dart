@@ -40,7 +40,7 @@ class _ButtonFloatingDialog extends State<ButtonFloatingDialog> {
           AnimatedOpacity(
             opacity: open ? 1 : 0,
             duration: widget.duration ?? Duration(milliseconds: 100),
-            child: new Container(
+              child: new Container(
               height: widget.heightCard ?? 600.0,
               width: widget.widthCard ?? 450.0,
               margin: widget.marginCard ?? EdgeInsets.only(bottom: 4.0, right: 40.0),
@@ -59,7 +59,16 @@ class _ButtonFloatingDialog extends State<ButtonFloatingDialog> {
                   ),
               child: widget.child,
             ),
+            
           ),
+    // new GestureDetector(
+    //             onTap: () {
+    //               setState(() {
+    //             open = !open;
+    //           });
+    //             },
+    //             child: Image.asset('assets/images/chatagent.png',height: 90,width: 100,),
+    //           ),
           new FloatingActionButton(
             onPressed: () {
               setState(() {

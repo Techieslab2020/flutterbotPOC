@@ -1,35 +1,48 @@
 import 'package:flutter/material.dart';
-import 'package:myapp/auth.dart';
-import 'auth.dart';
+import 'package:myapp/chatbot.dart';
 import 'utils/myColors.dart';
 import 'widgets/body.dart';
-import './buttonfloatingdialog.dart';
-import './widgets/dialog_flow.dart';
+import './widgets/buttonfloatingdialog.dart';
+
 
 class HomePage extends StatelessWidget {
-  HomePage({this.auth, this.onSignedOut});
-  final BaseAuth auth;
-  final VoidCallback onSignedOut;
-  void _signedOut()  {
-    try {
-      Auth().signOut();
-      onSignedOut();
-    } catch (e) {
-      print(e);
-    }
-  }
-  
+  HomePage();
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('Welcome'),
+        title:Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                  Image.asset(
+                 'assets/images/cart.png',
+                  fit: BoxFit.contain,
+                  height: 32,
+                  alignment: Alignment.topLeft,
+              ),
+              Container(
+                  padding: const EdgeInsets.all(8.0), child: Text('Smart Assistance',textAlign:TextAlign.center,),alignment:Alignment.center ,),
+     
+            ],
+   
+          ),
         automaticallyImplyLeading: false,
         actions: <Widget>[
-          new FlatButton( child: new Text('SignOut',style: new TextStyle(fontSize:17.0,color:Colors.white ),
-          ),
-          onPressed:_signedOut,)
+         
         ],
+         flexibleSpace: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: <Color>[
+              Colors.indigo,
+              Colors.lightBlue
+            ])  
+      ),
+         )
       ),
       body: Container(
       decoration: BoxDecoration(
@@ -44,30 +57,43 @@ class HomePage extends StatelessWidget {
         ),
       ),
     ),
-    floatingActionButton:  new ButtonFloatingDialog(
+    floatingActionButton: new ButtonFloatingDialog(
         child: new Column(children: <Widget>[
           new Container(
-            height: 30.0,
+            height: 40.0,
             color: Colors.blue,
-           
             child: Center(
-              
-              child: new Text("Shopper Assistance",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0,color:Colors.white),),
+            child: new Row(
+
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                   child:new Text("Shopper Assistance",
+                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15.0,color:Colors.white),) ,
+    ),
+    Container(
+      color: Colors.blue,
+      child: IconButton(
+              alignment: Alignment.center,
+                 icon: Icon(Icons.minimize),color: Colors.white,
+              onPressed: () {
+               
+              },
+             ),
+             ),
+                  ],
+              )
+        
             ),
           ),
-          new FlutterDialogFlow(),
+          //new GoogleAssistant(),
+          new ChatBot(),
           new Divider(height: 1.0),
-         
+ 
         ]),
       ),
     );
   }
 
-
-
-
-
-  
-  
 }

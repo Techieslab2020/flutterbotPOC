@@ -3,8 +3,8 @@ class BotSuggestions {
 
   BotSuggestions(List<dynamic> messages) {
     messages.forEach((message) {
-      if (message['payload'] != null) {
-        List<dynamic> suggestionList = message['payload']['welcomesuggestions'];
+      if (message['webhookPayload'] != null) {
+        List<dynamic> suggestionList = message['webhookPayload']['CarouselSelect'];
         suggestionList.forEach((suggestion) => suggestions.add(suggestion));
       }
     });

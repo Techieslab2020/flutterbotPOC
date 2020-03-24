@@ -8,5 +8,5 @@ class Strings {
   static const String subscribeText = "Click on Chat Button to talk with our Virtual Agent";
   static const String email_hint = "Email address please";
   static const String subscribeButton = "Subscribe";
-  static const String backgroundImage = "assets/image.jpg";
+  static const String backgroundImage = "assets/images/image.jpg";
 }
